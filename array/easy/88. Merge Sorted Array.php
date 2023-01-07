@@ -28,4 +28,13 @@ class Solution {
         return $nums1;
     }
 
+    function merge3(&$nums1, $m, $nums2, $n) {
+        for ($i = $m, $j = 0; $i < ($m + $n) - 2, $j < $n; $i++, $j++) {
+            $nums1[$i] = $nums2[$j];
+        }
+
+        sort($nums1);
+
+        return $nums1;
+    }
 }
