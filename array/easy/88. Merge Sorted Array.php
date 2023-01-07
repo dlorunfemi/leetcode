@@ -17,4 +17,15 @@ class Solution {
             $nums1[$k--] = ($nums1[$m] > $nums2[$n]) ? $nums1[$m--] : $nums2[$n--];
         }
     }
+
+    function merge2(&$nums1, $m, $nums2, $n) {
+        $nums1 = array_splice($nums1, 0, $m);
+        $nums2 = array_splice($nums2, 0, $n); // this is not necessary but it for efficiency
+        $nums1 = array_merge($nums1, $nums2);
+
+        sort($nums1);
+
+        return $nums1;
+    }
+
 }
